@@ -22,4 +22,3 @@ pip install -r requirements.txt
 ``` 
 
 
-postgresql://rojashrestha:vxFizXqCA7YUjnq1qmKVoSmuBJsoavPl@dpg-dbf1085g1s2s73e3mhmg-a.oregon-postgres.render.com/agentmemory_8o4s
