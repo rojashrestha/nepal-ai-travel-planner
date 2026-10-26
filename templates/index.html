@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nepal Travel Planner</title>
+  <link rel="icon" href="/static/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: Cormorant Garamond (headings), DM Sans (everything else),
+       Noto Serif Devanagari only for the few Nepali words on the page -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@500&display=swap&text=%E0%A4%A8%E0%A5%87%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%AF%E0%A4%BE%E0%A4%A4%E0%A5%8D%E0%A4%B0%E0%A4%B6%E0%A5%81%E0%A4%AD%20" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- Tells the CSS that JavaScript is running, so scroll effects can be used -->
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <!-- ===== Navigation bar ===== -->
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Nepal Travel Planner
+    </a>
+    <div class="nav-links">
+      <a href="#places">Places</a>
+      <a href="#how">How it works</a>
+      <a href="#planner" class="nav-cta">Plan a trip</a>
+    </div>
+  </nav>
+
+  <!-- ===== Hero: headline and intro, then the wide cover photo ===== -->
+  <header class="hero" id="top">
+    <div class="hero-intro">
+      <div>
+        <p class="eyebrow reveal"><span class="devanagari">नेपाल</span><span class="sep" aria-hidden="true">|</span>AI travel planner</p>
+        <h1 class="reveal">Plan your journey through Nepal</h1>
+      </div>
+      <div class="hero-side reveal">
+        <p class="lead">Tell us where you want to go, for how long and what you can spend. We find the buses, flights and hotels, then write a day-by-day plan with costs in rupees.</p>
+        <div class="hero-actions">
+          <a href="#planner" class="btn btn-primary">Start planning</a>
+          <a href="#places" class="btn btn-secondary">Explore places</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- The cover: the frame stays still while the photo inside drifts as you scroll -->
+    <figure class="cover reveal">
+      <div class="cover-frame">
+        <img src="/static/images/cover-flags.jpg" alt="Red Nepali flags hanging in front of an old palace in the morning mist" class="parallax" width="736" height="490">
+      </div>
+      <figcaption>Flags of Nepal in the morning mist</figcaption>
+    </figure>
+  </header>
+
+  <!-- ===== Places: click a photo to plan a trip there ===== -->
+  <section class="places section" id="places">
+    <div class="section-head reveal">
+      <h2 class="section-title">Places to explore</h2>
+      <p class="muted">Tap a place to start planning a trip there.</p>
+    </div>
+
+    <div class="places-grid">
+      <button type="button" class="place reveal" data-place="Boudhanath, Kathmandu" style="grid-area: a">
+        <img src="/static/images/boudhanath.jpg" alt="Boudhanath Stupa at sunset with prayer flags" loading="lazy">
+        <span class="place-label"><span class="place-name">Kathmandu</span><span class="place-note">Boudhanath Stupa</span></span>
+      </button>
+      <button type="button" class="place reveal" data-place="Bhaktapur" style="grid-area: b">
+        <img src="/static/images/bhaktapur.jpg" alt="A pagoda temple framed by a dark wooden doorway in Bhaktapur Durbar Square" loading="lazy">
+        <span class="place-label"><span class="place-name">Bhaktapur</span><span class="place-note">Durbar Square</span></span>
+      </button>
+      <button type="button" class="place reveal" data-place="Patan" style="grid-area: c">
+        <img src="/static/images/patan.jpg" alt="Stone temple in Patan Durbar Square under a pink evening sky" loading="lazy">
+        <span class="place-label"><span class="place-name">Patan</span><span class="place-note">Durbar Square</span></span>
+      </button>
+      <button type="button" class="place reveal" data-place="Chaurikharka" style="grid-area: d">
+        <img src="/static/images/chaurikharka.jpg" alt="Green hillside with wildflowers and a grazing animal at Chaurikharka" loading="lazy">
+        <span class="place-label"><span class="place-name">Chaurikharka</span><span class="place-note">Green hills</span></span>
+      </button>
+      <button type="button" class="place reveal" data-place="Marpha, Mustang" style="grid-area: e">
+        <img src="/static/images/marpha.jpg" alt="The village of Marpha below dry mountain slopes in Mustang" loading="lazy">
+        <span class="place-label"><span class="place-name">Marpha</span><span class="place-note">Mustang</span></span>
+      </button>
+      <button type="button" class="place reveal" data-place="Everest region" style="grid-area: f">
+        <img src="/static/images/everest-base-camp.jpg" alt="The carved Everest Base Camp rock below snow peaks" loading="lazy" style="object-position: center 15%">
+        <span class="place-label"><span class="place-name">Everest region</span><span class="place-note">Base Camp, 5,364 m</span></span>
+      </button>
+      <button type="button" class="place reveal" data-place="Annapurna Base Camp" style="grid-area: g">
+        <img src="/static/images/annapurna-base-camp.jpg" alt="Prayer flags and the welcome sign at Annapurna Base Camp" loading="lazy">
+        <span class="place-label"><span class="place-name">Annapurna</span><span class="place-note">Base Camp</span></span>
+      </button>
+      <button type="button" class="place reveal" data-place="Mustang" style="grid-area: h">
+        <img src="/static/images/dhumba-lake.jpg" alt="Turquoise Dhumba Lake surrounded by pine trees in Mustang" loading="lazy">
+        <span class="place-label"><span class="place-name">Mustang</span><span class="place-note">Dhumba Lake</span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== Food and culture: a row you can scroll sideways ===== -->
+  <section class="culture section" aria-labelledby="culture-title">
+    <div class="section-head culture-head reveal">
+      <div>
+        <h2 class="section-title" id="culture-title">Food and culture</h2>
+        <p class="muted">A few things worth making time for.</p>
+      </div>
+      <div class="strip-controls">
+        <button type="button" class="round-btn" id="strip-prev" aria-label="Scroll left"><span class="chev chev-left" aria-hidden="true"></span></button>
+        <button type="button" class="round-btn" id="strip-next" aria-label="Scroll right"><span class="chev chev-right" aria-hidden="true"></span></button>
+      </div>
+    </div>
+
+    <ul class="strip reveal" id="strip">
+      <li><img src="/static/images/dal-bhat-view.jpg" alt="Two plates of dal bhat on a terrace facing snow mountains" loading="lazy"><p>Dal bhat with a mountain view</p></li>
+      <li><img src="/static/images/newari-khaja.jpg" alt="A round tray of Newari khaja with many small dishes" loading="lazy"><p>Newari khaja</p></li>
+      <li><img src="/static/images/kukur-tihar.jpg" alt="A dog wearing a marigold garland and red tika for Kukur Tihar" loading="lazy"><p>Kukur Tihar, the day dogs are honoured</p></li>
+      <li><img src="/static/images/swet-bhairab.jpg" alt="The gilded face of Swet Bhairab behind a carved wooden screen" loading="lazy"><p>Swet Bhairab, Hanuman Dhoka</p></li>
+      <li><img src="/static/images/masks.jpg" alt="Wall of colourful hand-painted masks at a shop" loading="lazy"><p>Hand-painted masks</p></li>
+      <li><img src="/static/images/dhaka-topi.jpg" alt="Stacks of Dhaka topi caps in bright woven fabric" loading="lazy"><p>Dhaka topi</p></li>
+      <li><img src="/static/images/patan-courtyard.jpg" alt="Brick courtyard and pagoda roofs in Patan Durbar Square" loading="lazy"><p>Courtyards of Patan</p></li>
+      <li><img src="/static/images/yaks.jpg" alt="Yaks walking on the trail to Everest Base Camp below snow peaks" loading="lazy"><p>Yaks on the Everest trail</p></li>
+      <li><img src="/static/images/marpha-alley.jpg" alt="A narrow stone alley with prayer flags in Marpha" loading="lazy"><p>Stone alleys of Marpha</p></li>
+      <li><img src="/static/images/beads.jpg" alt="Market stall covered in beads, jewellery and brass" loading="lazy"><p>Beads and brass in the bazaar</p></li>
+      <li><img src="/static/images/annapurna-village.jpg" alt="A stone village house among marigolds below the Annapurna range" loading="lazy"><p>Village life below Annapurna</p></li>
+    </ul>
+  </section>
+
+  <!-- ===== How it works: the four agents in backend.py, with Everest beside them ===== -->
+  <section class="how section" id="how">
+    <div class="how-grid">
+      <div>
+        <h2 class="section-title reveal">Four steps, about thirty seconds</h2>
+        <ol class="steps">
+          <li class="reveal"><span class="step-num">01</span><h3>Transport</h3><p>Bus and jeep fares for your route, plus live flights when you ask for them.</p></li>
+          <li class="reveal"><span class="step-num">02</span><h3>Hotels</h3><p>Places to stay at your destination, with typical prices in NPR.</p></li>
+          <li class="reveal"><span class="step-num">03</span><h3>Itinerary</h3><p>A practical day-by-day plan with sights and entry fees.</p></li>
+          <li class="reveal"><span class="step-num">04</span><h3>Budget</h3><p>A cost breakdown checked against what you said you can spend.</p></li>
+        </ol>
+      </div>
+
+      <!-- The Everest photo is shown whole, in its original shape -->
+      <figure class="everest reveal">
+        <img src="/static/images/everest.jpg" alt="Mount Everest at sunset, seen from Everest Base Camp with prayer flags in the foreground" width="736" height="1307" loading="lazy">
+        <figcaption>Everest Base Camp, 5,364 m</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== The trip builder ===== -->
+  <section class="planner section" id="planner">
+    <div class="planner-head reveal">
+      <h2 class="section-title">Build your trip</h2>
+      <p class="muted">Pick the options below. We write the request for you, and you can still edit it.</p>
+    </div>
+
+    <div class="planner-grid">
+      <form id="plan-form" class="builder reveal">
+
+        <!-- From / To -->
+        <div class="field-row">
+          <div class="field">
+            <label for="from">Starting from</label>
+            <input id="from" type="text" value="Kathmandu" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="to">Going to</label>
+            <input id="to" type="text" value="Pokhara" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label">Popular places</span>
+          <div class="chips" id="destinations">
+            <button type="button" class="chip is-selected" data-place="Pokhara">Pokhara</button>
+            <button type="button" class="chip" data-place="Chitwan">Chitwan</button>
+            <button type="button" class="chip" data-place="Lumbini">Lumbini</button>
+            <button type="button" class="chip" data-place="Bandipur">Bandipur</button>
+            <button type="button" class="chip" data-place="Nagarkot">Nagarkot</button>
+            <button type="button" class="chip" data-place="Everest region">Everest region</button>
+            <button type="button" class="chip" data-place="Mustang">Mustang</button>
+          </div>
+        </div>
+
+        <!-- Days slider -->
+        <div class="field">
+          <div class="label-row">
+            <label for="days">How many days</label>
+            <output id="days-out" class="value">5 days</output>
+          </div>
+          <input id="days" type="range" min="1" max="21" value="5">
+        </div>
+
+        <!-- Budget slider -->
+        <div class="field">
+          <div class="label-row">
+            <label for="budget">Total budget</label>
+            <output id="budget-out" class="value">Rs 40,000</output>
+          </div>
+          <input id="budget" type="range" min="5000" max="300000" step="5000" value="40000">
+        </div>
+
+        <!-- Travellers stepper + transport toggle -->
+        <div class="field-row">
+          <div class="field">
+            <span class="label" id="travellers-label">Travellers</span>
+            <div class="stepper" role="group" aria-labelledby="travellers-label">
+              <button type="button" id="minus" aria-label="Fewer travellers">&minus;</button>
+              <output id="travellers-out">2</output>
+              <button type="button" id="plus" aria-label="More travellers">+</button>
+            </div>
+          </div>
+          <div class="field">
+            <span class="label" id="mode-label">Travel by</span>
+            <div class="segmented" role="radiogroup" aria-labelledby="mode-label">
+              <button type="button" class="segment is-selected" data-mode="bus" role="radio" aria-checked="true">Road</button>
+              <button type="button" class="segment" data-mode="flight" role="radio" aria-checked="false">Flight</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="field">
+          <span class="label">Interests <span class="muted small">(optional)</span></span>
+          <div class="chips" id="interests">
+            <button type="button" class="chip" data-interest="trekking" aria-pressed="false">Trekking</button>
+            <button type="button" class="chip" data-interest="temples and culture" aria-pressed="false">Temples &amp; culture</button>
+            <button type="button" class="chip" data-interest="wildlife" aria-pressed="false">Wildlife</button>
+            <button type="button" class="chip" data-interest="lakes and nature" aria-pressed="false">Lakes &amp; nature</button>
+            <button type="button" class="chip" data-interest="local food" aria-pressed="false">Local food</button>
+            <button type="button" class="chip" data-interest="adventure sports" aria-pressed="false">Adventure</button>
+          </div>
+        </div>
+
+        <!-- The text actually sent to the AI -->
+        <div class="field">
+          <div class="label-row">
+            <label for="message">Your request</label>
+            <button type="button" id="reset-request" class="link-btn hidden">Rewrite from options</button>
+          </div>
+          <textarea id="message" rows="3"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn-primary">Plan my trip</button>
+          <button type="button" id="new-trip-btn" class="btn btn-secondary">Start over</button>
+        </div>
+      </form>
+
+      <!-- Right column: photo + live summary -->
+      <aside class="summary reveal">
+        <div class="summary-photo">
+          <img src="/static/images/nepal-2.jpg" alt="Prayer flags above a sea of clouds with snow peaks behind">
+        </div>
+        <div class="summary-body">
+          <p class="summary-kicker">Your trip at a glance</p>
+          <p class="summary-route"><span id="sum-from">Kathmandu</span> <span class="arrow" aria-hidden="true"></span> <span id="sum-to">Pokhara</span></p>
+          <dl class="summary-list">
+            <div><dt>Duration</dt><dd id="sum-days">5 days</dd></div>
+            <div><dt>Travellers</dt><dd id="sum-travellers">2</dd></div>
+            <div><dt>Per person, per day</dt><dd id="sum-ppd">Rs 4,000</dd></div>
+            <div><dt>Travel</dt><dd id="sum-mode">By road</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== Loading: the four stages tick through ===== -->
+  <section id="loading" class="loading section hidden" aria-live="polite">
+    <div class="loading-inner">
+      <!-- A mountain ridge that draws itself while we wait -->
+      <svg class="ridge" viewBox="0 0 240 60" aria-hidden="true">
+        <path d="M2 56 L42 30 L62 40 L102 8 L132 36 L152 26 L192 50 L238 38"/>
+      </svg>
+      <h2 class="loading-title">Planning your trip</h2>
+      <ol class="stages" id="stages">
+        <li>Checking buses and flights</li>
+        <li>Looking for hotels</li>
+        <li>Building your day-by-day plan</li>
+        <li>Adding up the budget</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Error ===== -->
+  <section id="error" class="error section hidden" role="alert"></section>
+
+  <!-- ===== Result ===== -->
+  <section id="result" class="result section hidden">
+    <div class="result-head">
+      <div>
+        <p class="eyebrow">Your plan</p>
+        <h2 class="section-title" id="result-title">Kathmandu to Pokhara</h2>
+      </div>
+      <div class="result-tools">
+        <button type="button" id="copy-btn" class="btn btn-secondary">Copy text</button>
+        <button type="button" id="print-btn" class="btn btn-secondary">Save as PDF</button>
+      </div>
+    </div>
+
+    <div class="result-grid">
+      <nav class="toc" aria-label="Sections of your plan">
+        <p class="toc-title">On this page</p>
+        <ol id="toc"></ol>
+      </nav>
+      <article id="answer" class="answer"></article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p class="footer-blessing devanagari">शुभ यात्रा</p>
+    <p class="muted small">Have a good journey. Prices are estimates, so confirm them before you book.</p>
+  </footer>
+
+  <!-- marked turns the AI's Markdown into HTML, DOMPurify removes anything unsafe -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>
