@@ -64,6 +64,5 @@ async def tavily_mcp_search(query: str):
             "query": query
         }
     )
-    return result
     # print(result)
-    
+    return result

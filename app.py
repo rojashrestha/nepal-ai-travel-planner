@@ -10,6 +10,11 @@ from pydantic import BaseModel
 
 from backend import run_travel_agent
 
+# This is to allow nested event loops for async calls in FastAPI
+import nest_asyncio
+nest_asyncio.apply()
+
+
 BASE_DIR = Path(__file__).resolve().parent
 
 app = FastAPI(
@@ -47,11 +52,8 @@ async def home(request: Request):
     )
 
 
-# Must match the fetch("/api/plan") call in static/script.js.
-# Plain `def` (not async) so FastAPI runs the slow agent call in a thread
-# and the server can still answer other requests while it works.
-@app.post("/api/plan")
-def travel_planner(request_data: TravelRequest):
+@app.post("/api/travel")
+async def travel_planner(request_data: TravelRequest):
     try:
         user_message = request_data.message.strip()
 
@@ -74,7 +76,7 @@ def travel_planner(request_data: TravelRequest):
                 "success": True,
                 "thread_id": result["thread_id"],
                 "answer": result["answer"],
-                "transport_results": result["transport_results"],
+                "flight_results": result["flight_results"],
                 "hotel_results": result["hotel_results"],
                 "itinerary": result["itinerary"],
                 "llm_calls": result["llm_calls"],

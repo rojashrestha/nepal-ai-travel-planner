@@ -189,7 +189,7 @@ form.addEventListener("submit", async (event) => {
 
   try {
     // fetch() sends an HTTP request to our FastAPI server (app.py)
-    const response = await fetch("/api/plan", {
+    const response = await fetch("/api/travel", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: message, thread_id: threadId }),
